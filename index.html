@@ -3,123 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <title></title>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <header>
-    <div class="buttons">
-      <button>今天</button>
-      <button>上一个月</button>
-      <button>下一个月</button>
-    </div>
+  <div class="page">
+    <!--用 .page 把 header 和 main 包起来-->
+    <header>
+      <div class="buttons">
+        <button>今天</button>
+        <button>上一个月</button>
+        <button>下一个月</button>
+      </div>
 
-    <div class="selects">
-      <select>
-        <!-- 这里的 options 应该是根据当前年份设置的，我们先写个假的 -->
-        <option value="2017">2017</option>
-        <option value="2016">2016</option>
-        <option value="2015">2015</option>
-      </select>
-      年
-      <select>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-        <option value="11">11</option>
-        <option value="12">12</option>
-      </select>
-      月
-    </div>
-  </header>  
-  <!--header 好了，接下来是 main-->
-  <main>
-    <!--我们用什么标签呢-->
-    <!--看起来很像 table，对吧-->
-    <table>
-      <!--周一到周七，我们作为表头，用 th-->
-      <thead>
-        <tr>
-          <th>周一</th>
-          <th>周二</th>
-          <th>周三</th>
-          <th>周四</th>
-          <th>周五</th>
-          <th>周六</th>
-          <th>周日</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!--为什么我们要做6个 tr？-->
-        <!--因为一个月最多6周-->
-        <tr>
-          <!--重点来了，周一是几号……-->
-          <!--这个就要算一算了-->
-          <!--用 JS 算，所以我们不能写 HTML 了-->
-          <!--为了写CSS，还是先写几个假的-->
-          <td>27</td>
-          <td>38</td>
-          <td>1</td>
-          <td>2</td>
-          <td>3</td>
-          <td>4</td>
-          <td>5</td>
-        </tr>
-        <tr>
-          <td>6</td>
-          <td>7</td>
-          <td>8</td>
-          <td>9</td>
-          <td>10</td>
-          <td>11</td>
-          <td>12</td>
-        </tr>
-        <tr>
-          <td>13</td>
-          <td>14</td>
-          <td>15</td>
-          <td>16</td>
-          <td>17</td>
-          <td>18</td>
-          <td>19</td>
-        </tr>
-        <tr>
-          <td>20</td>
-          <td>21</td>
-          <td>22</td>
-          <td>23</td>
-          <td>24</td>
-          <td>25</td>
-          <td>26</td>
-        </tr>
-        <tr>
-          <td>27</td>
-          <td>28</td>
-          <td>29</td>
-          <td>30</td>
-          <td>31</td>
-          <td>1</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>4</td>
-          <td>5</td>
-          <td>6</td>
-          <td>7</td>
-          <td>8</td>
-          <td>9</td>
-        </tr>
-        <!--好了，写了这个月的假数据-->
-        <!--HTML 写完了-->
-      </tbody>
-    </table>
+      <div class="selects">
+        <select>
+          <!-- 这里的 options 应该是根据当前年份设置的，我们先写个假的 -->
+          <option value="2017">2017</option>
+          <option value="2016">2016</option>
+          <option value="2015">2015</option>
+        </select>
+        年
+        <select>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+        </select>
+        月
+      </div>
+    </header>  
+    <!--header 好了，接下来是 main-->
+    <main>
+      <!--我们用什么标签呢-->
+      <!--看起来很像 table，对吧,
+      实验证明 table 不好用-->
+      <!--我们把 table 改成了 div > ol + ol-->
+      <div class="calendar">
+        <ol class="weekdays">
+          <li>周一</li>
+          <li>周二</li>
+          <li>周三</li>
+          <li>周四</li>
+          <li>周五</li>
+          <li>周六</li>
+          <li>周日</li>
+        </ol>
+        <ol class="days">
+          <li>27</li> <li>38</li> <li>1</li> <li>2</li> <li>3</li> <li>4</li> <li>5</li> <li>6</li> <li>7</li> <li>8</li> <li>9</li> <li>10</li> <li>11</li> <li>12</li> <li>13</li> <li>14</li> <li>15</li> <li>16</li> <li>17</li> <li>18</li> <li>19</li> <li>20</li> <li>21</li> <li>22</li> <li>23</li> <li>24</li> <li>25</li> <li>26</li> <li>27</li> <li>28</li> <li>29</li> <li>30</li> <li>31</li> <li>1</li> <li>2</li> <li>3</li> <li>4</li> <li>5</li> <li>6</li> <li>7</li> <li>8</li> <li>9</li>
+        </ol>
+      </div>
 
-  </main>
+    </main>
+  </div>
 </body>
 </html>
